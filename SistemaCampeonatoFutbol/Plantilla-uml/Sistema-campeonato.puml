@@ -1,0 +1,68 @@
+@startuml sistema de gestion campeonato de fútbol
+
+
+class Campeonato {
+nombre: string
+
+}
+
+class EquipoFutbol {
+sede: string
+nombre : string
+fechaCreacion: date
+categoría: string
+escudo: imagen
+coloresedelEquipo: string
+alineacion: number
+}
+class Estadio {
+nombre: string
+}
+
+ class Jugador {
+nombres: string
+apellidos: string
+fechaNacimiento: date
+posición: string
+númeroCamiseta: number 
+}
+
+class  Arbitro {
+nombres:
+apellidos:
+}
+
+class Partido  {
+fechaLimite: date 
+horario: date
+estadioAsignado: string
+resulatdo: number
+fechaPartido: date 
+}
+class Sistema {
+equiposParticipantes: number 
+partidosProgramados: number
+resulatdoPartidos: number
+estadisticas: string
+}
+
+
+Campeonato <|-- EquipoFutbol
+Campeonato <|-- Jugador
+Campeonato <|-- Arbitro
+Campeonato <|-- Partido
+
+Partido <|-- EquipoFutbol
+Partido <|-- Arbitro
+Partido <|-- Jugador
+
+Jugador "1" -- "1..*" EquipoFutbol
+EquipoFutbol "2" -- "1..*" Partido
+Estadio <|-- Partido
+
+EquipoFutbol <|-- Sistema
+Campeonato <|-- Sistema
+Partido <|-- Sistema
+Jugador <|-- Sistema
+
+@enduml

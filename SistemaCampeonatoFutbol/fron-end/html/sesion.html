@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Iniciar Sesión</title>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    />
+
+    <link rel="stylesheet" href="../css/estilos.css" />
+  </head>
+  <body>
+    <div id="navbar">
+      <ul>
+        <li><a href="pag-principal.html">Inicio</a></li>
+        <li><a href="../acerca-de.html">Sobre Nosotros</a></li>
+        <li><a href="https://wa.me/5930939971949">Contáctanos</a></li>
+      </ul>
+    </div>
+    <main>
+      <div class="contenedor__todo">
+        <div class="caja__trasera">
+          <div class="caja__trasera-login">
+            <h3>¿Ya tienes una cuenta?</h3>
+            <p>Inicia sesión para entrar en la página</p>
+            <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+          </div>
+
+          <div class="caja__trasera-register">
+            <h3>¿Aún no tienes una cuenta?</h3>
+            <p>Regístrate para que puedas iniciar sesión</p>
+            <button id="btn__registrarse">Regístrarse</button>
+          </div>
+        </div>
+
+        <div class="contenedor__login-register">
+          <form action="" class="formulario__login">
+            <h2>Iniciar Sesión</h2>
+            <input
+              type="text"
+              id="id-logemail"
+              placeholder="Correo Electronico"
+            />
+            <input type="password" id="id-logpass" placeholder="Contraseña" />
+            <button>Entrar</button>
+          </form>
+          <div
+            class="modal fade"
+            id="modalCredencialesIncorrectas"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modalCredencialesIncorrectasLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="modalCredencialesIncorrectasLabel"
+                  >
+                    Credenciales Incorrectas
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Cerrar"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Las credenciales proporcionadas son incorrectas. Por favor,
+                  inténtalo nuevamente.
+                </div>
+              </div>
+            </div>
+          </div>
+          <div
+            class="modal fade"
+            id="modalCredencialesIncorrectasRegistro"
+            tabindex="-1"
+            role="dialog"
+            aria-labelledby="modalCredencialesIncorrectasLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-dialog-centered" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5
+                    class="modal-title"
+                    id="modalCredencialesIncorrectasRegistroLabel"
+                  >
+                    Credenciales Incorrectas
+                  </h5>
+                  <button
+                    type="button"
+                    class="close"
+                    data-dismiss="modal"
+                    aria-label="Cerrar"
+                  >
+                    <span aria-hidden="true">&times;</span>
+                  </button>
+                </div>
+                <div class="modal-body">
+                  Las credenciales proporcionadas son incorrectas. Por favor,
+                  inténtalo nuevamente.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <form action="" class="formulario__register">
+            <h2>Regístrarse</h2>
+            <input type="text" id="logname" placeholder="Usuario" />
+            <input type="text" id="logemail" placeholder="Correo Electronico" />
+            <input type="password" id="logpass" placeholder="Contraseña" />
+            <button>Regístrarse</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="../js/login.js"></script>
+    <script src="../js/registro.js"></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

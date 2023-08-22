@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <!-- Metadatos -->
+    <meta charset="utf-8" />
+    <meta name="author" content="Jane Doe" />
+    <meta
+      name="description"
+      content="Portafolio de desarrollo web de Jane Doe"
+    />
+    <meta name="keywords" content="HTML, CSS, JavaScript, React" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Titulo -->
+    <title>Jane Doe | Desarrollo Web Front-End</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="imagenes/icono.png" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <!-- Iconos de Bootstrap -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+    <!-- CSS -->
+    <link href="css/acerca-de.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@500&family=Rubik+Dirt&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- Barra de navegacion -->
+    <nav class="navbar navbar-expand-md navbar-light">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbar-toggler"
+          aria-controls="navbarTogglerDemo01"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-toggler">
+          <a class="navbar-brand" href="#">
+            <img
+              src="../../SistemaCampeonatoFutbol/fron-end/imagenes/icono.png"
+              width="50"
+              alt="Logo de la página web"
+            />
+          </a>
+          <div id="navbar">
+            <ul>
+              <li><a href="../fron-end/html/pag-principal.html">Home</a></li>
+              <li><a href="#sobre-mi">Sobre Nosotros</a></li>
+              <li><a href="#news">News</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+              <!-- login Button -->
+              <li id="login">
+                <a href="../fron-end/html/sesion.html">Login</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Seccion Hero -->
+    <section class="hero align-items-stretch">
+      <div
+        class="hero-principal d-flex flex-column justify-content-center align-items-center"
+      >
+        <img
+          class="hero-imagen-desarrollador rounded-circle"
+          src="imagenes/imagenes-desarrolladores/desarrollador-ejemplo.svg"
+          alt="Foto de Jane Doe"
+        />
+        <h1>Hola, Somos Victor y Gabriel</h1>
+      </div>
+      <div class="hero-inferior">
+        <img
+          class="hero-inferior-imagen img-fluid"
+          src="imagenes/hero-inferior.svg"
+          alt="Monitor, laptop y logos de HTML, CSS, JavaScript y React."
+        />
+      </div>
+    </section>
+
+    <!-- Sobre mi -->
+    <section id="sobre-mi" class="sobre-mi seccion-oscura">
+      <div class="contenedor">
+       
+        <p class="seccion-texto">
+          <h2 class="seccion-titulo">Conoce sobre nuestro proyecto</h2>
+          "¡Bienvenidos a Sports Website! Somos un dúo dinámico compuesto por
+          Víctor Celi y Gabriel Carriel, y estamos emocionados de compartir
+          nuestra pasión por los deportes contigo. Nuestra misión es llevar la
+          emoción del mundo deportivo a tu pantalla, ofreciéndote análisis
+          profundos, noticias de última hora y una cobertura completa de tus
+          equipos y eventos favoritos. Con una combinación única de conocimiento
+          y entusiasmo, estamos comprometidos a brindarte contenido de calidad
+          que te mantenga informado y entretenido. Únete a nosotros en esta
+          emocionante travesía mientras celebramos la grandeza atlética juntos
+          en Sports Website."
+        </p>
+      </div>
+    </section>
+
+    <!-- Articulos -->
+    <section id="news" class="articulos justify-content-start">
+      <h2 class="seccion-titulo texto-negro">Artículos</h2>
+      <div class="card">
+        <div class="card-header">Más recientes</div>
+        <ul class="list-group list-group-flush">
+          <a
+            href="https://www.espn.com.ec/futbol/inglaterra/nota/_/id/12454247/moises-caicedo-entre-los-nominados-a-mejor-jugador-joven-del-ano"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li class="list-group-item">
+              Moisés Caicedo entre los nominados a mejor jugador joven del año
+            </li>
+          </a>
+          <a
+            href="https://www.espn.com.ec/futbol/francia/nota/_/id/12454439/neymar-al-hilal-arabia-saudita-cristiano-pionero"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li class="list-group-item">
+              Neymar: "Cristiano fue el pionero de venir acá, todos lo llamaban
+              loco"
+            </li>
+          </a>
+          <a
+            href="https://www.espn.com.ec/futbol/ecuador/nota/_/id/12454567/enner-valencia-y-su-sueno-en-la-conmebol-libertadores"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li class="list-group-item">
+              Enner goat &#128016; y su sueño en la CONMEBOL Libertadores
+            </li>
+          </a>
+          <a
+            href="https://www.espn.com.ec/futbol/champions-league/nota/_/id/12452133/manchester-city-guardiola-dt-marcas-campeon-sevilla-ancelotti-tecnico"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li class="list-group-item">
+              Guardiola logró, con Manchester City, nuevas marcas como DT
+              campeón
+            </li>
+          </a>
+          <a
+            href="https://www.espn.com.ec/futbol/norte-centro-america/nota/_/id/12448698/lionel-messi-final-leagues-cup-inter-miami-gol-mas-largo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <li class="list-group-item">
+              Messi marcó el gol más lejano de su carrera: un disparo de 32
+              metros
+            </li>
+          </a>
+        </ul>
+      </div>
+      <a
+        href="https://www.espn.com.ec/futbol/"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <button type="button" class="btn btn-info">
+          Ver más artículos
+          <i class="bi bi-arrow-right-circle-fill"></i><br />
+        </button>
+      </a>
+    </section>
+    <br /><br />
+
+    <!-- Contacto -->
+    <section id="contacto" class="contacto seccion-oscura">
+      <div class="container">
+        <div
+          class="container text-center rectangulo d-flex justify-content-evenly"
+        >
+          <div class="row">
+            <div class="col-12 col-md-4 seccion-titulo">¡Hablemos!</div>
+            <div class="col-12 col-md-4 descripcion">
+              Contáctame para iniciar tu proyecto de desarrollo web y haré que
+              tu visión se vuelva realidad.
+            </div>
+            <div class="col-12 col-md-4">
+              <a href="https://wa.me/5930939971949">
+                <button type="button">
+                  Contacto
+                  <i class="bi bi-whatsapp"></i>
+                </button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="seccion-oscura d-flex flex-column align-items-center justify-content-center"
+    >
+      <div class="derechos-de-autor">Created By Gabriel, Victor &#169;</div>
+    </footer>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

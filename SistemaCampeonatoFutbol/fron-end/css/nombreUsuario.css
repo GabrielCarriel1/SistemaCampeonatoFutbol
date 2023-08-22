@@ -1,0 +1,29 @@
+#bienvenidoUsuario {
+  font-size: 30px;
+  font-weight: bold;
+}
+.navbar-brand {
+  font-size: 30px;
+  font-weight: bold;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-weight: 300;
+  font-size: 15px;
+  line-height: 1.7;
+  color: #c4c3ca;
+  background: linear-gradient(
+    180deg,
+    rgb(47, 15, 141) 0%,
+    rgb(32, 31, 54) 100%
+  );
+  overflow-x: hidden;
+}
+
+body {
+  background-image: url(../images/istockphoto-1156102065-170667a.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-attachment: fixed;
+}

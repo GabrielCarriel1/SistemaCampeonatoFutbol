@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registrar Equipos</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link rel="stylesheet" href="../../fron-end/css/modal.css" />
+    <link rel="stylesheet" href="../../fron-end/css/equipos.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <span class="navbar-brand">Registro de Equipos</span>
+
+        <div class="collapse navbar-collapse justify-content-end">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <button
+                type="button"
+                class="btn btn-danger"
+                id="cerrarSesionCrearequipos"
+              >
+                Cerrar Sesión
+              </button>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-5">
+      <div class="row justify-content-center">
+        <!-- Columna del Formulario -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Registro de Equipos</h2>
+              <form id="form-registrar-equipos">
+                <!-- ... (resto del formulario) ... -->
+                <div class="mb-3">
+                  <label for="escudo-equipo" class="form-label"
+                    >Escudo del Equipo</label
+                  >
+                  <input
+                    type="file"
+                    accept="image"
+                    class="form-control"
+                    id="id-escudo-equipo"
+                    placeholder="xd"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="sede" class="form-label">Sede</label>
+                  <select
+                    class="form-select"
+                    id="id-sede"
+                    aria-label="seleccionar sede"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Selecciona una sede
+                    </option>
+                    <option value="pichincha">Pichincha</option>
+                    <option value="guayas">Guayas</option>
+                    <option value="eloro">El Oro</option>
+                    <option value="manabi">Manabí</option>
+                    <option value="esmeraldas">Esmeraldas</option>
+                    <option value="tungurahua">Tungurahua</option>
+                    <option value="chimborazo">Chimborazo</option>
+                    <option value="imbabura">Imbabura</option>
+                    <option value="canar">Cañar</option>
+                    <option value="loja">Loja</option>
+                    <option value="losrios">Los Ríos</option>
+                    <option value="napo">Napo</option>
+                    <option value="zamora">Zamora Chinchipe</option>
+                    <option value="orellana">Orellana</option>
+                    <option value="santaelena">Santa Elena</option>
+                    <option value="pastaza">Pastaza</option>
+                    <option value="bolivar">Bolivar</option>
+                    <option value="santoDomingoTsachilas">Santo Domingo</option>
+                    <option value="sucumbios">Sucumbios</option>
+                    <option value="morona">Morona Santiago</option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="ciudad" class="form-label">Ciudad</label>
+                  <select
+                    class="form-select"
+                    name="ciudad"
+                    id="id-ciudad"
+                    aria-label="Selecciona la ciudad"
+                    required
+                  >
+                    <option value="" disabled selected>
+                      Selecciona una ciudad
+                    </option>
+                  </select>
+                </div>
+                <div class="mb-3">
+                  <label for="nombreEquipo" class="form-label"
+                    >Nombre del Equipo</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="nombre-equipo"
+                    placeholder="Ingresa el Nombre del Equipo"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="uniforme" class="form-label"
+                    >Color del Uniforme</label
+                  >
+                  <div class="d-flex align-items-center">
+                    <input
+                      type="color"
+                      id="color-equipo"
+                      class="me-2"
+                      placeholder="xd"
+                    />
+                    <div
+                      id="color-preview"
+                      style="width: 30px; height: 30px; border-radius: 50%"
+                    ></div>
+                  </div>
+                </div>
+                <div class="mb-3">
+                  <label for="categoria" class="form-label">Categoría</label>
+                  <select
+                    class="form-select"
+                    name="categoria"
+                    id="id-categoria"
+                    aria-label="Selecciona una categoría"
+                  >
+                    <option value="" disabled selected>
+                      Selecciona una Categoría
+                    </option>
+                    <option value="sub-20">Sub-20</option>
+                    <option value="sub-20">Serie B</option>
+                    <option value="sub-20">Serie A</option>
+                  </select>
+                </div>
+                <div class="d-grid">
+                  <button type="submit" class="btn btn-primary">
+                    Registrar Equipo
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Columna de Equipos Registrados -->
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <h2 class="card-title text-center">Equipos Registrados</h2>
+              <ul id="equipos-registrados" class="list-group">
+                <!-- Los equipos registrados se mostrarán aquí -->
+              </ul>
+            </div>
+            <div>
+              <div class="d-grid">
+                <button
+                  type="button"
+                  class="btn btn-primary custom-button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#enfrentamientoModal"
+                  id="btnEnfrentamiento"
+                >
+                  Enfrentamientos de Equipos
+                </button>
+              </div>
+              <div class="d-grid mt-3" style="margin-bottom: 20px">
+                <button
+                  type="button"
+                  class="btn btn-primary custom-button"
+                  data-bs-toggle="modal"
+                  data-bs-target="#posicionesModal"
+                  id="btnPosiciones"
+                >
+                  Tabla de Posiciones
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Tabla de Posiciones -->
+    <div
+      class="modal fade"
+      id="posicionesModal"
+      tabindex="-1"
+      aria-labelledby="posicionesModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg custom-modal2-ancho">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title negro" id="posicionesModalLabel">
+              Tabla de Posiciones
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Num</th>
+                  <th>Escudo</th>
+                  <th>Equipo</th>
+                  <th>Partidos jugados</th>
+                  <th>Goles</th>
+                  <th>Puntos</th>
+                  <th>Tar. Amarrila</th>
+                  <th>Tar. Roja</th>
+                </tr>
+              </thead>
+              <tbody id="tablaPosiciones">
+                <!-- La tabla de posiciones se llenará aquí -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="enfrentamientoModal"
+      tabindex="-1"
+      aria-labelledby="enfrentamientoModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg custom-modal-ancho">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="enfrentamientoModalLabel">
+              Enfrentamiento de Equipos
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Cerrar"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Fecha</th>
+                  <th>Local</th>
+                  <th>VS</th>
+                  <th>Visitante</th>
+                  <th>Gol Local</th>
+                  <th>-</th>
+                  <th>Gol Visitante</th>
+                  <th>Ama Loc</th>
+                  <th>Ama Vis</th>
+                  <th>Roja Loc</th>
+                  <th>Roja Vis</th>
+                  <th>Sustituciones</th>
+                </tr>
+              </thead>
+              <tbody id="tablaEnfrentamientos">
+                <!-- Enfrentamientos se llenarán aquí -->
+              </tbody>
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cerrar
+            </button>
+            <button
+              type="button"
+              class="btn btn-primary"
+              id="btnRegistrarResultados"
+            >
+              Registrar Resultados
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Modal de Registro de Jugadores -->
+    <div
+      class="modal fade"
+      id="registroJugadorModal"
+      tabindex="-1"
+      aria-labelledby="registroJugadorModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title negro" id="registroJugadorModalLabel">
+              Registrar Jugador
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="form-registro-jugador">
+              <div class="mb-3">
+                <label for="nombreJugador" class="form-label negro"
+                  >Nombre del Jugador</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="nombreJugador"
+                  name="nombreJugador"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="apellidoJugador" class="form-label negro"
+                  >Apellido del Jugador</label
+                >
+                <input
+                  type="text"
+                  class="form-control"
+                  id="apellidoJugador"
+                  name="nombreJugador"
+                  required
+                />
+              </div>
+              <div class="mb-3">
+                <label for="fechaNacimiento" class="form-label negro"
+                  >Fecha de Nacimiento</label
+                >
+                <input
+                  type="date"
+                  class="form-control"
+                  id="<fechaNacimiento"
+                  name="nombreJugador"
+                  required
+                />
+              </div>
+
+              <div class="mb-3">
+                <label for="posicion" class="form-label negro">Posición</label>
+                <select
+                  name="posicion"
+                  id="id-posicion"
+                  class="form-select negro"
+                >
+                  <option value="">---</option>
+                  <option value="portero">Portero</option>
+                  <option value="lateralIz">Lateral Izquierdo</option>
+                  <option value="lateralDe">Lateral Derecho</option>
+                  <option value="central">Defensa Central</option>
+                  <option value="medioCentro">Medio Centro</option>
+                  <option value="volanteIz">Volante Izquierdo</option>
+                  <option value="volanteDe">Volante Derecho</option>
+                  <option value="extremode">Extremo Derecho</option>
+                  <option value="extremoiz">Extremo Izquierdo</option>
+                  <option value="delantero">Delantero</option>
+                </select>
+              </div>
+
+              <div class="mb-3">
+                <label for="posicion" class="form-label negro"
+                  >Numero de Camiseta</label
+                >
+                <input
+                  type="number"
+                  class="form-control"
+                  id="numeroCamiseta"
+                  name="posicion"
+                  min="0"
+                  required
+                />
+              </div>
+              <!-- Agrega más campos según sea necesario -->
+              <div class="modal-footer">
+                <button type="submit" class="btn btn-primary">
+                  Registrar Jugador
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal de Confirmación de Eliminación -->
+    <div
+      class="modal fade"
+      id="confirmarEliminacionModal"
+      tabindex="-1"
+      aria-labelledby="confirmarEliminacionModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header bg-danger text-white">
+            <h5 class="modal-title negro" id="confirmarEliminacionModalLabel">
+              Confirmar Eliminación
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <p class="lead negro">
+              ¿Estás seguro de que quieres eliminar el equipo?
+            </p>
+            <p id="equipoNombreModal" class="h4 negro"></p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Cancelar
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger"
+              id="btnConfirmarEliminacion"
+            >
+              Eliminar
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/use-case/equipos-registrados.js"></script>
+    <script src="../js/sede-ciudades.js"></script>
+    <script>
+      const botonCerrarSesion = document.getElementById(
+        "cerrarSesionCrearequipos"
+      );
+      botonCerrarSesion.addEventListener("click", () => {
+        sessionStorage.removeItem("login_success");
+        window.location.href = "pag-principal.html";
+      });
+    </script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+  </body>
+</html>
